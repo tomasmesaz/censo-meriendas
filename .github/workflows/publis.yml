@@ -1,7 +1,11 @@
 name: Publish dashboard
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "*/10 * * * *"
     
 jobs:
   build-deploy:
